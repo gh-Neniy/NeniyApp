@@ -3,10 +3,8 @@ export module NSocket:Receive;
 #include "Includes.h"
 import std;
 
-export namespace nen
-{
-	decltype(auto) receive(auto ssl) noexcept
-	{
+export namespace nen {
+	decltype(auto) receive(auto ssl) noexcept {
 		auto buf = std::make_unique<char[]>(16384); std::string resp;
 
 		do {
