@@ -2,10 +2,8 @@ export module Parts;
 
 import std;
 
-export namespace nen
-{
-	enum class Symbol
-	{
+export namespace nen {
+	enum class Symbol {
 		INCH,	AAVE,	ACM,	ADA,	ADX,	AGLD,	AKRO,	ALGO,	ALICE,	ALPACA,	ALPHA,	ANKR,	ANT,	ARDR,	ARPA,	AR,		ASR,
 		ATA,	ATM,	ATOM,	AUCTION,AUDIO,	AVA,	AVAX,	AXS,	BADGER,	BAKE,	BAL,	BAND,	BAR,	BAT,	BCH,	BEL,	BETA,
 		BLZ,	BNB,	BNT,	BOND,	BTC,	BTS,	BURGER,	C98,	CAKE,	CELO,	CELR,	CFX,	CHESS,	CHR,	CHZ,	CITY,	CKB,
@@ -24,8 +22,7 @@ export namespace nen
 
 		End
 	};
-	enum class Interval
-	{
+	enum class Interval {
 		FiveMinutes,
 		FifteenMinutes,
 		FourHours,
@@ -40,10 +37,8 @@ export namespace nen
 	constexpr inline void operator++(Symbol& symbol) noexcept				 { symbol = static_cast<Symbol>(static_cast<int>(symbol) + 1);	 }
 	constexpr inline void operator+=(Symbol& symbol, const int val) noexcept { symbol = static_cast<Symbol>(static_cast<int>(symbol) + val); }
 
-	template<typename S> constexpr inline std::string optS(S&& symbol) noexcept
-	{
-		switch (std::forward<S>(symbol))
-		{
+	template<typename S> constexpr inline std::string optS(S&& symbol) noexcept {
+		switch (std::forward<S>(symbol)) {
 		case Symbol::INCH:		return "1INCH";
 		case Symbol::AAVE:		return "AAVE";
 		case Symbol::ACM:		return "ACM";
@@ -297,10 +292,8 @@ export namespace nen
 		default: return "BTC";
 		}
 	}
-	template<typename I> constexpr inline std::string optI(I&& interval) noexcept
-	{
-		switch (std::forward<I>(interval))
-		{
+	template<typename I> constexpr inline std::string optI(I&& interval) noexcept {
+		switch (std::forward<I>(interval)) {
 		case Interval::FiveMinutes:		return "5m";
 		case Interval::FifteenMinutes:	return "15m";
 		case Interval::FourHours:		return "4h";
